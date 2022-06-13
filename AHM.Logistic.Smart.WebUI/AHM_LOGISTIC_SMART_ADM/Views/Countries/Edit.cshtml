@@ -1,0 +1,42 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CountryViewModel
+
+@{
+    ViewData["Title"] = "Editar Pais";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding-top: 10%">
+    <div class="container-fluid content-inner mt-n5 py-0">
+        <div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card" style="padding: 5% 3% 5% 3%">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Areas</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                <form asp-route="SaveArea" method="post" autocomplete="off">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Descripción</label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="cou_Description" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div style="margin: 4% 0% 0% 0%;">
+                                        <button type="submit" class="btn btn-primary" style="margin: 0px 30px 0px 0px;">Guardar</button>
+                                        <a class="btn btn-danger" asp-area="" asp-controller="Countries" asp-action="Index">Regresar</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

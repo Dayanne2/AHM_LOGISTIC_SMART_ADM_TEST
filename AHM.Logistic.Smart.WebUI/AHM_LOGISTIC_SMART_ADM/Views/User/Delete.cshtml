@@ -1,0 +1,39 @@
+﻿@model AHM.Logistic.Smart.Common.Models.UsersViewModel
+
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding-top: 10%">
+    <div class="container-fluid content-inner mt-n5 py-0">
+        <div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card" style="padding: 5% 3% 5% 3%">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">¿Desea eliminar este Usuario?</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                <form method="post" autocomplete="off">
+                                    <input type="hidden" asp-for="usu_Id" />
+                                    <input type="hidden" asp-for="usu_UserName" />
+                                    <input type="hidden" asp-for="usu_IdUserModified" value="1" />
+                                    <input type="hidden" asp-for="rol_Id" />
+                                    @*<input type="hidden" asp-for="pe" />*@
+                                    <hr>
+                                    <div style="margin: 4% 0% 0% 0%;">
+                                        <button type="submit" class="btn btn-warning" style="margin: 0px 30px 0px 0px;">Eliminar</button>
+                                        <a class="btn btn-danger" asp-area="" asp-controller="User" asp-action="Index">Regresar</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

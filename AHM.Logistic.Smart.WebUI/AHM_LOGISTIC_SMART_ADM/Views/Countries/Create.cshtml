@@ -1,0 +1,47 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CountryModel
+@{
+    ViewData["Title"] = "Crear Pais";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <title>Crear País</title>
+</head>
+<body>
+    <div style="margin-top: -10%" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="card">
+                    <div style="background: #f16c69;" class="card-header">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3 style="color: #FFF">Crear País</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post" autocomplete="off">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Nombre de Usuario</label>
+                                        <input type="text" asp-for="cou_Description" class="form-control" />
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="margin: 4% 0% 0% 0%;">
+                                    <button type="submit" class="btn btn-warning" style="margin: 0px 30px 0px 0px;">Agregar</button>
+                                    <a class="btn btn-success" asp-area="" asp-controller="Countries" asp-action="Index">Regresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

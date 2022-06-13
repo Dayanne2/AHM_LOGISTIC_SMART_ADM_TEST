@@ -1,0 +1,103 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CustomerViewModel
+@{
+    ViewData["Title"] = "Editar Compradores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h4 class="card-title font-16 mt-0">Editar Cliente</h4>
+                    <h6 class="card-subtitle font-14 text-muted">Modifique los campos que desea</h6>
+                    <div class="card-body">
+                        <form class="form-row" method="post" id="frmEditCustomer">
+                            <input type="hidden" asp-for="cus_Id" />
+                            <input type="hidden" asp-for="cus_IdUserModified" value="1" />
+                            <input type="hidden" asp-for="cus_IdUserCreate" value="2" />
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Codigo de Usuario</label>
+                                    <select name="dep_Id" id="SelectUsuario2" class="form-control" maxlength="1"></select>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="200">
+                                    <label class="form-label">Nombre</label>
+                                    <input maxlength="200" type="text" asp-for="cus_Name" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Tipo de Canal</label>
+                                    <select asp-for="tyCh_Id" class="form-control">
+                                        <option value="0">Por favor seleccione una opción... </option>
+                                        <option value="1">Privado</option>
+                                        <option value="2">Publico</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="13">
+                                    <label class="form-label">RTN</label>
+                                    <input maxlength="13" type="text" asp-for="cus_RTN" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Departamento</label>
+                                    <select name="dep_Id" id="SelectDepartments2" class="form-control" maxlength="1"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Municipio</label>
+                                    <select name="mun_Id" id="SelectMunicipalities2" class="form-control" maxlength="1" disabled>
+                                        <option value="0"> Por favor seleccione una opción... </option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12" maxlength="200">
+                                    <label class="form-label">Dirección</label>
+                                    <textarea maxlength="200" asp-for="cus_Address" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="100">
+                                    <label class="form-label">Email</label>
+                                    <input maxlength="100" type="text" asp-for="cus_Email" class="form-control" />
+                                </div>
+
+                                <div class="form-group col-md-6" maxlength="11">
+                                    <div>
+                                        <label class="form-label">Telefono</label>
+                                        <input type="tel" maxlength="11" asp-for="cus_Phone" class="form-control validateInput-ui Telefono" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="11">
+                                    <div>
+                                        <label class="form-label">Otro teléfono</label>
+                                        <input type="tel" maxlength="11" asp-for="cus_AnotherPhone" class="form-control validateInput-ui Telefono" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin: 4% 0% 0% 0%;">
+                                <button type="submit" class="btn btn-secondary" style="margin: 0px 30px 0px 0px;">Agregar</button>
+                                <a class="btn btn-primary" asp-area="" asp-controller="Customers" asp-action="Index">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    @Html.Partial("_CustomerNotesCreate")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery.min.js"></script>
+<!-- Customer scripts -->
+<script src="~/js/app/Customers/Customers.js"></script>
+@*<script src="~/js/app/Customers/CustomersCreate.js"></script>
+    <script src="~/js/app/Customers/CustomersDelete.js"></script>*@
+<script src="~/js/app/Customers/CustomersEdit.js"></script>
+<script>
+    function docReady(fn) {
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+    docReady(function () {
+        Menu('customers');
+    });
+</script>

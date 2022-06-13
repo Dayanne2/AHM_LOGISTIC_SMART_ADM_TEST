@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>@ViewData["Title"] - Logistic Smart</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="~/plugins/morris/morris.css">
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="~/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- PRUEBA NOTIFICACIONES TOAST-->
+    <link href="~/js/plugins/toastr/toastr.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="~/Home/Index" class="logo">
+                    <span>
+                        <img src="~/images/SmartLogisticLogo.png" alt="" height="38">
+                    </span>
+                    <i>
+                        <img src="~/images/logoSmart-sm.png" alt="" height="28">
+                    </i>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="navbar-right d-flex list-inline float-right mb-0">
+                    <li class="dropdown notification-list d-none d-sm-block">
+                        <form role="search" class="app-search">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Search..">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="mdi mdi-bell noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                            <!-- item-->
+                            <h6 class="dropdown-item-text">
+                                Notifications (36)
+                            </h6>
+                            <div class="slimscroll notification-item-list">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                    <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                    <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-info"><i class="mdi mdi-flag"></i></div>
+                                    <p class="notify-details">Your item is shipped<span class="text-muted">It is a long established fact that a reader will</span></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                    <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
+                                </a>
+                            </div>
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                                View all <i class="fi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="dropdown notification-list">
+                        <div class="dropdown notification-list nav-pro-img">
+                            <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="~/images/users/user-4.jpg" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i> Profile</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i> My Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings m-r-5"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-effect waves-light">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    <li class="d-none d-sm-block">
+                        <div class="dropdown pt-3 d-inline-block">
+                            <a class="btn btn-header waves-effect waves-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Create New
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Main</li>
+                        <li>
+                            <a href="~/Home/Index" class="waves-effect">
+                                <i class="mdi mdi-home"></i><span> Menu Principal </span>
+                            </a>
+                        </li>
+
+                        <li id="li-apartClte">
+                            <a href="javascript:void(0);" id="apartClte" class="waves-effect"><i class="mdi mdi-account-multiple"></i><span> Cliente <span class="float-right menu-arrow"><i class="mdi mdi-plus"></i></span> </span></a>
+                            <ul class="submenu" id="ul-Clte">
+                                <li><a href="~/Contacts/Index"> Contactos </a></li>
+                                <li id="li-customers"><a href="~/Customers/Index" id="customers" onclick="Menu('customers')"> Clientes </a></li>
+                            </ul>
+                        </li>
+
+                        <li id="li-apartVent">
+                            <a href="javascript:void(0);" id="apartVent" class="waves-effect"><i class="mdi mdi-percent"></i> <span> Ventas <span class="float-right menu-arrow"><i class="mdi mdi-plus" id="iconVent"></i></span> </span> </a>
+                            <ul class="submenu" id="ul-Vent">
+                                <li><a href="~/Quote/Index"> Cotizaciones </a></li>
+                                <li><a href="~/Orders/Index"> Órdenes </a></li>
+                                <li id="li-products"><a href="~/Products/Index" id="products" onclick="Menu('products')"> Productos </a></li>
+                                <li><a href="~/Categories/Index"> Categorias </a></li>
+                                <li><a href="~/SubCategories/Index"> Sub-Categorias </a></li>
+                            </ul>
+                        </li>
+
+                        <li id="li-apartCatalog">
+                            <a href="javascript:void(0);" id="apartCatalog" class="waves-effect"><i class="mdi mdi-table"></i> <span> Catalogos <span class="float-right menu-arrow"><i class="mdi mdi-plus"></i></span> </span> </a>
+                            <ul class="submenu" id="ul-Catalog">
+                                <li id="li-persons"><a href="~/Persons/Index" id="persons" onclick="Menu('persons')"> Personas </a></li>
+                                <li id="li-empleados"><a href="~/Employers/Index" id="empleados" onclick="Menu('empleados')"> Empleados </a></li>
+                                <li><a href="~/Occupation/Index"> Puestos </a></li>
+                                <li><a href="~/Areas/Index"> Areas </a></li>
+                                <li id="li-countries"><a href="~/Countries/Index" id="countries" onclick="Menu('countries')"> Países </a></li>
+                                <li><a href="~/Muni/Index"> Municipios </a></li>
+                                <li><a href="~/Depart/Index"> Departamentos </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">Admin</li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-box"></i><span> Accesos <span class="float-right menu-arrow"><i class="mdi mdi-plus"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="~/User/Index"> Usuarios </a></li>
+                                <li><a href="~/Rol/Index"> Roles </a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">@ViewBag.Table</h4>
+                                <ol class="breadcrumb">
+                                    <li>@ViewBag.Description</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                    <div class="page-content-wrapper">
+                        @RenderBody()
+                    </div>
+                    <!-- end page content-->
+                </div> <!-- container-fluid -->
+            </div> <!-- content -->
+            <footer class="footer">
+                © 2022 AHM <span class="d-none d-sm-inline-block">- 5ta Generacion <i class="mdi mdi-heart text-danger"></i></span>
+            </footer>
+
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+    <!-- END wrapper -->
+    <!-- Library Bundle Script -->
+    <!-- Library Bundle Script -->
+    <script src="~/js/core/libs.min.js"></script>
+
+    <!-- External Library Bundle Script -->
+    <script src="~/js/core/external.min.js"></script>
+
+
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+    <script src="~/js/waves.min.js"></script>
+
+    <script src="~/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/plugins/bootstrap-md-datetimepicker/js/moment-with-locales.min.js"></script>
+    <script src="~/plugins/bootstrap-md-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="~/plugins/datatables/jszip.min.js"></script>
+    <script src="~/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="~/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/js/app.js"></script>
+
+    <!-- Utils  -->
+    <script src="~/js/app/utils.js"></script>
+
+    <!-- validateInputs-ui  -->
+    <script src="~/js/plugins/validate-inputs-ui.js"></script>
+
+    <!-- InputMasK -->
+    <script src="~/js/plugins/jquery.inputmask.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/sweetAlert.js"></script>
+
+    <!-- Menu -->
+    <script src="~/js/menu/menu.js"></script>
+
+    <!-- FormValidations -->
+    <script src="~/js/validations/formValidations.js"></script>
+
+    <!-- Categories -->
+    <script src="~/js/app//Categories/CategoriesDelete.js"></script>
+    <script src="~/js/app//Categories/CategoriesCreate.js"></script>
+    <script src="~/js/app//Categories/CategoriesEdit.js"></script>
+
+    <!-- Categories -->
+    <script src="~/js/app//SubCategoria/SubCateCreate.js"></script>
+    <script src="~/js/app//SubCategoria/SubCateEdit.js"></script>
+    <script src="~/js/app//SubCategoria/SubCateDelete.js"></script>
+
+    <!-- Customers -->
+    <script src="~/js/app/Customers/CustomersDelete.js"></script>
+
+    <!-- Municipalities -->
+    <script src="~/js/app/Municipalities/MunicipalitiesDelete.js"></script>
+    <script src="~/js/app/Municipalities/MunicipalitiesCreate.js"></script>
+    <script src="~/js/app/Municipalities/MunicipalitiesEdit.js"></script>
+
+    <!-- Departamento -->
+    <script src="~/js/app/Depart/DepartDelete.js"></script>
+    <script src="~/js/app/Depart/DepartCreate.js"></script>
+    <script src="~/js/app/Depart/DepartEdit.js"></script>
+
+    <!-- Roles -->
+    <script src="~/js/app/Rol/RolDelete.js"></script>
+    <script src="~/js/app/Rol/RolCreate.js"></script>
+    <script src="~/js/app/Rol/RolEdit.js"></script>
+
+
+    <!-- Contacts -->
+    <script src="~/js/app/Contacts/ContatsCreate.js"></script>
+    <script src="~/js/app/Contacts/ContactsDelete.js"></script>
+    <script src="~/js/app/Contacts/ContactsEdit.js"></script>
+
+    <!-- Occupations -->
+    <script src="~/js/app/Occupations/OccupationsCreate.js"></script>
+    <script src="~/js/app/Occupations/OccupationsDelete.js"></script>
+    <script src="~/js/app/Occupations/OccupationsEdit.js"></script>
+
+    <!-- Users -->
+    <script src="~/js/app/Users/UsersCreate.js"></script>
+    <script src="~/js/app/Users/UsersDelete.js"></script>
+    <script src="~/js/app/Users/UsersEdit.js"></script>
+
+    <!-- Cotization -->
+    <script src="~/js/app/Cotizations/Cotizations.js"></script>
+    <script src="~/js/app/Cotizations/CotizationsDelete.js"></script>
+
+
+
+    <!-- Departamento -->
+    <script src="~/js/app/Depart/DepartDelete.js"></script>
+    <script src="~/js/app/Depart/DepartCreate.js"></script>
+    <script src="~/js/app/Depart/DepartEdit.js"></script>
+
+    <!-- PRUEBA NOTIFICACIONES TOASTR -->
+    <script src="~/plugins/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/js/app/Notification/Success.js"></script>
+</body>
+
+</html>

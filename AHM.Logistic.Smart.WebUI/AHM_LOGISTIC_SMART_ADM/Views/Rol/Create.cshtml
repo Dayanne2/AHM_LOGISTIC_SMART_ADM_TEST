@@ -1,0 +1,40 @@
+﻿@model AHM.Logistic.Smart.Common.Models.RolesModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card" style="padding: 5% 3% 5% 3%">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Informacion del nuevo Rol</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post" autocomplete="off">
+                                <div class="row">
+                                    <input type="hidden" asp-for="rol_IdUserCreate" value="1" />
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label">Descripción</label>
+                                        <div class="col-md-10">
+                                            <input type="text" asp-for="rol_Description" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="margin: 4% 0% 0% 0%;">
+                                    <button type="submit" class="btn btn-success" style="margin: 0px 30px 0px 0px;">Agregar</button>
+                                    <a class="btn btn-outline-secondary" asp-area="" asp-controller="Rol" asp-action="Index">Regresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

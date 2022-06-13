@@ -1,0 +1,78 @@
+﻿@model AHM.Logistic.Smart.Common.Models.ContactsModel
+@{
+    ViewData["Title"] = "Crear Contacto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding-top: 10%">
+    <div class="container-fluid content-inner mt-n5 py-0">
+        <div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card" style="padding: 1%">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Contacto</h4>
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card-body" id="CreateContacts">
+                            <div class="new-user-info">
+                                <form autocomplete="off">
+                                    <div class="row">
+                                        @*<input type="hidden" asp-for="cont_Id" value="1" />*@
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Nombre</label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="cont_Name" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Apellido</label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="cont_LastName" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Correo electronico</label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="cont_Email" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Número celular</label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="cont_Phone" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Ocupaciones</label>
+                                            <div class="col-md-10">
+                                                <select name="occ_Id" id="DropDownOcupaciones" class="form-control" maxlength="1"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">Cliente</label>
+                                            <div class="col-md-10">
+                                                <select name="cus_Id" id="DropDownCustomers" class="form-control" maxlength="1"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div style="margin: 4% 0% 0% 0%;">
+                                        <button type="button" class="btn btn-success" style="margin: 0px 30px 0px 0px;" id="btnCreateContacts">Agregar</button>
+                                        <a class="btn btn-outline-secondary" asp-area="" asp-controller="Contacts" asp-action="Index">Regresar</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="~/js/app/Contacts/ContatsCreate.js"></script>
+
+

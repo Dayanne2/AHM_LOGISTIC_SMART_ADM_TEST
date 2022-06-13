@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Editar Ordenes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card" style="padding: 5% 3% 5% 3%">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Ordenes</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label">Comprador</label>
+                                        <select name="type" class="selectpicker form-control" data-style="py-0">
+                                            <option>Seleccione</option>
+                                            <option>Comprador</option>
+                                            <option>Conmprador</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label">Cotizacion</label>
+                                        <select name="type" class="selectpicker form-control" data-style="py-0">
+                                            <option>Seleccione</option>
+                                            <option>Cotizacion</option>
+                                            <option>Cotizacion</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="fname">Estado</label>
+                                        <input type="text" class="form-control" id="fname" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label">Estado Orden</label>
+                                        <select name="type" class="selectpicker form-control" data-style="py-0">
+                                            <option>Activo</option>
+                                            <option>Inactivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="margin: 4% 0% 0% 0%;">
+                                    <button type="submit" class="btn btn-primary" style="margin: 0px 30px 0px 0px;">Editar</button>
+                                    <a class="btn btn-danger" asp-area="" asp-controller="Orders" asp-action="Index">Regresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model AHM.Logistic.Smart.Common.Models.SubCategoriesViewModel
+@{
+    ViewData["Title"] = "Editar Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card" style=" padding: 5% 3% 5% 3%">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Sub Categorias</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form>
+                                <input type="hidden" asp-for="scat_Id" />
+                                <input type="hidden" asp-for="scat_IdUserCreate" />
+                                <input type="hidden" asp-for="scat_IdUserModified" />
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label">Descipcion</label>
+                                        <div class="col-md-10">
+                                            <input type="text" asp-for="scat_Description" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Categorias</label>
+                                    <select name="type" class="selectpicker form-control" data-style="py-0">
+                                        <option>Seleccione</option>
+                                        <option>Areas</option>
+                                        <option>Areas</option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <div style="margin: 4% 0% 0% 0%;">
+                                    <button type="submit" class="btn btn-primary" style="margin: 0px 30px 0px 0px;">Editar</button>
+                                    <a class="btn btn-danger" asp-area="" asp-controller="SubCategories" asp-action="Index">Regresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

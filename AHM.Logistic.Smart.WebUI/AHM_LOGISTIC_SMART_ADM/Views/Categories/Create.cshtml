@@ -1,0 +1,50 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CategoryModel
+
+@{
+    ViewData["Title"] = "Crear Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card" style=" padding: 5% 3% 5% 3%">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Categorias</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post" autocomplete="off">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label asp-for="cat_Description" class="form-label"></label>
+                                        <div class="col-md-10">
+                                            <input type="text" asp-for="cat_Description" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div hidden>
+                                        <input asp-for="cat_IdUserCreate" value="1" />
+                                    </div>
+                                    @*<div class="form-group col-md-6">
+            <label asp-for="cat_IdUserCreate" class="form-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="cat_IdUserCreate" class="form-control" />
+            </div>
+        </div>*@
+                                </div>
+                                <hr>
+                                <div style="margin: 4% 0% 0% 0%;">
+                                    <input type="submit" value="Guardar" class="btn btn-success" />
+                                    <a class="btn btn-danger" asp-area="" asp-controller="Categories" asp-action="Index">Regresar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

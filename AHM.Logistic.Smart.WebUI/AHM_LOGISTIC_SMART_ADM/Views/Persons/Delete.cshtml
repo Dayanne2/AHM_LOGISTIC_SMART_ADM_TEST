@@ -1,0 +1,51 @@
+﻿@model AHM.Logistic.Smart.Common.Models.PersonsViewModel
+@{
+    ViewData["Title"] = "Eliminar Persons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding-top: 10%">
+    <div class="container-fluid content-inner mt-n5 py-0">
+        <div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card" style="padding: 1%">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">¿Desea eliminar la persona?</h4>
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                <form method="post" autocomplete="off">
+                                    <div class="row">
+                                        <input type="hidden" asp-for="per_IdUserCreate" value="1" />
+                                        <input type="hidden" asp-for="per_IdUserModified" value="1" />
+                                        <input type="hidden" asp-for="per_Id"/>
+                                        <input type="hidden" asp-for="per_Identidad" />
+                                        <input type="hidden" asp-for="per_Firstname" />
+                                        <input type="hidden" asp-for="per_Secondname" />
+                                        <input type="hidden" asp-for="per_LastNames" />
+                                        <input type="hidden" asp-for="per_BirthDate" />
+                                        <input type="hidden" asp-for="per_Sex" />
+                                        <input type="hidden" asp-for="per_Email" />
+                                        <input type="hidden" asp-for="per_Phone" />
+                                        <input type="hidden" asp-for="per_Direccion" />
+                                        <input type="hidden" asp-for="dep_Id" />
+                                        <input type="hidden" asp-for="mun_Id" />
+                                        <input type="hidden" asp-for="per_Esciv" />
+                                    </div>
+                                    <hr>
+                                    <div style="margin: 4% 0% 0% 0%;">
+                                        <button type="submit" class="btn btn-success" style="margin: 0px 30px 0px 0px;">Guardar</button>
+                                        <a class="btn btn-outline-secondary" asp-area="" asp-controller="Persons" asp-action="Index">Regresar</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

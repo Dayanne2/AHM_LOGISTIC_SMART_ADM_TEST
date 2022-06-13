@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Areas\Index.cshtml" />
+    <None Include="Views\Categories\Create.cshtml" />
+    <None Include="Views\Categories\Edit.cshtml" />
+    <None Include="Views\Categories\Index.cshtml" />
+    <None Include="Views\Contacts\Create.cshtml" />
+    <None Include="Views\Contacts\Edit.cshtml" />
+    <None Include="Views\Contacts\Index.cshtml" />
+    <None Include="Views\Customers\Index.cshtml" />
+    <None Include="Views\Depart\Create.cshtml" />
+    <None Include="Views\Depart\Edit.cshtml" />
+    <None Include="Views\Depart\Index.cshtml" />
+    <None Include="Views\Employers\Index.cshtml" />
+    <None Include="Views\Occupation\Create.cshtml" />
+    <None Include="Views\Occupation\Edit.cshtml" />
+    <None Include="Views\Occupation\Index.cshtml" />
+    <None Include="Views\Persons\Index.cshtml" />
+    <None Include="Views\Rol\Create.cshtml" />
+    <None Include="Views\Rol\Edit.cshtml" />
+    <None Include="Views\Rol\Index.cshtml" />
+    <None Include="Views\SubCategories\Create.cshtml" />
+    <None Include="Views\SubCategories\Edit.cshtml" />
+    <None Include="Views\SubCategories\Index.cshtml" />
+    <None Include="Views\User\Create.cshtml" />
+    <None Include="Views\User\Delete.cshtml" />
+    <None Include="Views\User\Edit.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
+    <None Include="wwwroot\js\app\Areas\AreasCreate.js" />
+    <None Include="wwwroot\js\app\Areas\AreasDelete.js" />
+    <None Include="wwwroot\js\app\Areas\AreasEdit.js" />
+    <None Include="wwwroot\js\app\Categories\CategoriesDelete.js" />
+    <None Include="wwwroot\js\app\Productos\Products.js" />
+    <None Include="wwwroot\js\app\Users\UsersCreate.js" />
+    <None Include="wwwroot\js\app\Users\UsersDelete.js" />
+    <None Include="wwwroot\js\app\Users\UsersEdit.js" />
+    <None Include="wwwroot\js\app\utils.js" />
+    <None Include="wwwroot\js\charts\apexcharts.js" />
+    <None Include="wwwroot\js\charts\dashboard.js" />
+    <None Include="wwwroot\js\charts\vectore-chart.js" />
+    <None Include="wwwroot\js\charts\widgetcharts.js" />
+    <None Include="wwwroot\js\core\external.min.js" />
+    <None Include="wwwroot\js\core\libs.min.js" />
+    <None Include="wwwroot\js\hope-ui.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\plugins\calender.js" />
+    <None Include="wwwroot\js\plugins\circle-progress.js" />
+    <None Include="wwwroot\js\plugins\countdown.js" />
+    <None Include="wwwroot\js\plugins\form-wizard.js" />
+    <None Include="wwwroot\js\plugins\fslightbox.js" />
+    <None Include="wwwroot\js\plugins\kanban.js" />
+    <None Include="wwwroot\js\plugins\prism.mini.js" />
+    <None Include="wwwroot\js\plugins\setting.js" />
+    <None Include="wwwroot\js\plugins\slider-tabs.js" />
+    <None Include="wwwroot\js\sweetAlert.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AHM.Logistic.Smart.Common">
+      <HintPath>..\..\..\AHM_LOGISTIC_SMART_API\AHM.Logistic.Smart.Common\bin\Debug\net5.0\AHM.Logistic.Smart.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\plugins\toastr\" />
+  </ItemGroup>
+
+</Project>
